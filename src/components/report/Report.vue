@@ -10,7 +10,7 @@
     <!-- 卡片视图区 -->
     <el-card >
         <!-- 2.为Echarts准备一个具备大小（宽高）的Dom -->
-        <div id="main" style="width: 600px;height:400px;"></div>
+        <div id="main" style="width: 750px;height:400px;"></div>
     </el-card>
   </div>
 </template>
@@ -18,6 +18,7 @@
 <script>
     // 1.导入echarts
     import echarts from 'echarts'
+    import _ from 'lodash'
     export default {
         data () {
             return {
@@ -42,8 +43,10 @@
             }
             // 4. 准备数据和配置项
             // var option = {}
+            const result = _.merge(res.data, this.options)
             // 5.展示数据
-            myEchart.setOption(res.data)
+            console.log(result)
+            myEchart.setOption(result)
         },
         methods: {}
     }
