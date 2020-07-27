@@ -10,6 +10,7 @@ module.exports = {
   ],
   plugins: [
     // 发布产品时候的插件数组
-    ...prodPlugins
+    ...prodPlugins,
+    '@babel/plugin-syntax-dynamic-import'
   ]
 }
